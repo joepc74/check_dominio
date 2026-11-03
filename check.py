@@ -34,6 +34,7 @@ def check_domains():
 
 if __name__=="__main__":
     # Load environment variables from .env file
-    load_dotenv(os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__))))
+    __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+    load_dotenv(dotenv_path=os.path.join(__location__, ".env"))
 
     check_domains()
